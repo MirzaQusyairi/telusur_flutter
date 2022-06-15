@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "telusur_flutter" "\0"
+            VALUE "FileDescription", "welcome_login_signup_page_flutter" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "telusur_flutter" "\0"
+            VALUE "InternalName", "welcome_login_signup_page_flutter" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "telusur_flutter.exe" "\0"
-            VALUE "ProductName", "telusur_flutter" "\0"
+            VALUE "OriginalFilename", "welcome_login_signup_page_flutter.exe" "\0"
+            VALUE "ProductName", "welcome_login_signup_page_flutter" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
