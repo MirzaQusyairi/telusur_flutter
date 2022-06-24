@@ -20,7 +20,7 @@ class WideButton extends StatelessWidget {
       child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
-              primary: Colors.purple,
+              primary: Colors.orange,
               padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
               textStyle:
                   const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),

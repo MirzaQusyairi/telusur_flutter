@@ -18,11 +18,11 @@ final sliderArrayList = [
       sliderHeading: SLIDER_HEADING_1,
       sliderSubHeading: SLIDER_DESC),
   Slider(
-      sliderImageUrl: 'assets/two.png',
+      sliderImageUrl: 'assets/travel2.png',
       sliderHeading: SLIDER_HEADING_2,
       sliderSubHeading: SLIDER_DESC),
   Slider(
-      sliderImageUrl: 'assets/three.png',
+      sliderImageUrl: 'assets/travel3.png',
       sliderHeading: SLIDER_HEADING_3,
       sliderSubHeading: SLIDER_DESC),
 ];

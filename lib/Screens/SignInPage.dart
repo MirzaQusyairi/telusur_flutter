@@ -23,7 +23,7 @@ class _SignInPageState extends State<SignInPage> {
       appBar: AppBar(
         elevation: 0.0,
         centerTitle: true,
-        title: NormalText("Sign In", kblack, 20.0),
+        
         backgroundColor: kwhite,
         iconTheme: IconThemeData(
           color: Colors.black,

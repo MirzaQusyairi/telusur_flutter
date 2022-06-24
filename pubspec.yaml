@@ -59,6 +59,8 @@ flutter:
   assets:
     - assets/travel.png
     - assets/two.png
+    - assets/travel2.png
+    - assets/travel3.png
     - assets/three.png
     - assets/images/mandalika.jpg
     - assets/images/kelingking.jpg
