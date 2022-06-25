@@ -323,7 +323,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zakariahextech.letsHeadOut;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.telusur_flutter;
 				PRODUCT_NAME = "lets_head_out";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -453,7 +453,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zakariahextech.letsHeadOut;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.telusur_flutter;
 				PRODUCT_NAME = "lets_head_out";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -476,7 +476,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zakariahextech.letsHeadOut;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.telusur_flutter;
 				PRODUCT_NAME = "lets_head_out";
 				VERSIONING_SYSTEM = "apple-generic";
 			};

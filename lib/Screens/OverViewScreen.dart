@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:lets_head_out/utils/Buttons.dart';
-import 'package:lets_head_out/utils/TextStyles.dart';
-import 'package:lets_head_out/utils/consts.dart';
+import 'package:telusur_flutter/utils/Buttons.dart';
+import 'package:telusur_flutter/utils/TextStyles.dart';
+import 'package:telusur_flutter/utils/consts.dart';
+import 'package:telusur_flutter/model/post.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 class OverViewPage extends StatefulWidget {
+  const OverViewPage({Key? key}) : super(key: key);
+
   @override
   _OverViewPageState createState() => _OverViewPageState();
 }
 
 class _OverViewPageState extends State<OverViewPage>
     with SingleTickerProviderStateMixin {
-  TabController tabController;
+  late TabController tabController;
 
   @override
   Widget build(BuildContext context) {
+    Post post = ModalRoute.of(context)!.settings.arguments as Post;
+
     return Scaffold(
       backgroundColor: kwhite,
       body: Stack(
@@ -54,7 +60,15 @@ class _OverViewPageState extends State<OverViewPage>
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                BoldText("Pantai Balongan Indah", 20.0, kblack),
+                                SizedBox(
+                                  width: 500,
+                                  child: Text(
+                                    post.title,
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
                                 Row(
                                   children: <Widget>[
                                     // BoldText("4.5 Stars", 12.0, korange),
@@ -62,18 +76,17 @@ class _OverViewPageState extends State<OverViewPage>
                                     //   width: 16.0,
                                     // ),
                                     Icon(
-                                      Icons.location_on,
+                                      Icons.account_circle_sharp,
                                       color: kgreyDark,
                                       size: 15.0,
                                     ),
-                                    NormalText(
-                                        "Desa Balongan", kgreyDark, 15.0),
+                                    NormalText(post.author, kgreyDark, 15.0),
                                   ],
                                 ),
                                 SizedBox(
                                   height: 10,
                                 ),
-                                NormalText("Rp 5000/orang", kgreyDark, 16.0),
+                                // NormalText("Rp 5000/orang", kgreyDark, 16.0),
                                 SizedBox(
                                   height: 10.0,
                                 ),
@@ -95,10 +108,13 @@ class _OverViewPageState extends State<OverViewPage>
                                 SizedBox(
                                   height: 10,
                                 ),
-                                NormalText(
-                                    "Pantai Balongan Indah atau yang disebut masyarakat sebagai Bali-nya Indramayu merupakan pantai yang terletak dekat dengan Pertamina di daerah Balongan Kabupaten Indramayu ",
-                                    kblack,
-                                    12.0),
+                                Html(
+                                  data: """
+                                    ${post.body}
+                                      """,
+                                ),
+
+                                //NormalText(post.body, kblack, 12.0),
                                 SizedBox(
                                   height: 10.0,
                                 ),

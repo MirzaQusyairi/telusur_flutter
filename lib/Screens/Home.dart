@@ -1,8 +1,8 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:lets_head_out/Screens/DashBoard.dart';
-import 'package:lets_head_out/utils/TextStyles.dart';
-import 'package:lets_head_out/utils/consts.dart';
+import 'package:telusur_flutter/Screens/DashBoard.dart';
+import 'package:telusur_flutter/utils/TextStyles.dart';
+import 'package:telusur_flutter/utils/consts.dart';
 
 import 'Notifications.dart';
 // import 'Orders.dart';
@@ -17,7 +17,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _cIndex = 0;
 
-  PageController _pageController;
+  late PageController _pageController;
 
   @override
   void initState() {

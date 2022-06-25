@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lets_head_out/utils/TextStyles.dart';
-import 'package:lets_head_out/utils/consts.dart';
+import 'package:telusur_flutter/utils/TextStyles.dart';
+import 'package:telusur_flutter/utils/consts.dart';
 
 class Notifications extends StatefulWidget {
   @override

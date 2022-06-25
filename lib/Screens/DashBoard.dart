@@ -1,17 +1,30 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:lets_head_out/utils/BestRatedImage.dart';
-import 'package:lets_head_out/utils/Buttons.dart';
-import 'package:lets_head_out/utils/CitiesImage.dart';
-import 'package:lets_head_out/utils/RecommendationImage.dart';
-import 'package:lets_head_out/utils/TextStyles.dart';
-import 'package:lets_head_out/utils/consts.dart';
-import 'package:lets_head_out/utils/imageContainer.dart';
+import 'package:telusur_flutter/utils/BestRatedImage.dart';
+import 'package:telusur_flutter/utils/Buttons.dart';
+import 'package:telusur_flutter/utils/CitiesImage.dart';
+import 'package:telusur_flutter/utils/RecommendationImage.dart';
+import 'package:telusur_flutter/utils/TextStyles.dart';
+import 'package:telusur_flutter/utils/consts.dart';
+import 'package:telusur_flutter/utils/imageContainer.dart';
+import 'package:telusur_flutter/model/post.dart';
+import 'package:http/http.dart' as http;
 
 import 'OverViewScreen.dart';
 
+Future<List<Post>> fetchPost() async {
+  var response = await http.get(Uri.parse('http://127.0.0.1:8000/api/post'));
+  return (json.decode(response.body)['data'] as List)
+      .map((e) => Post.fromJson(e))
+      .toList();
+}
+
 class Dashboard extends StatefulWidget {
+  const Dashboard({Key? key}) : super(key: key);
+
   @override
   _DashboardState createState() => _DashboardState();
 }
@@ -32,25 +45,43 @@ class _DashboardState extends State<Dashboard> {
                   padding: const EdgeInsets.only(bottom: 20.0),
                   child: Align(
                       alignment: Alignment.centerLeft,
-                      child: BoldText("Destinasi", 20.0, kblack)),
+                      child: BoldText("Blog", 20.0, kblack)),
                 ),
                 Container(
                   width: 330,
                   height: 150,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: <Widget>[
-                      buildContainer(),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      buildContainer(),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      buildContainer(),
-                    ],
-                  ),
+                  child: FutureBuilder(
+                      future: fetchPost(),
+                      builder: (context, AsyncSnapshot snapshot) {
+                        if (snapshot.hasData) {
+                          List<Post> post = snapshot.data as List<Post>;
+                          return ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: post.length,
+                            itemBuilder: (BuildContext context, int index) =>
+                                InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, "/detail_page",
+                                    arguments: post[index]);
+                              },
+                              child: buildContainer(post[index].image,
+                                  post[index].title, post[index].author),
+                            ),
+                            separatorBuilder: (content, _) => const SizedBox(
+                              width: 20,
+                            ),
+                          );
+                        } else if (snapshot.hasError) {
+                          return Text("${snapshot.error}");
+                        }
+                        return const Center(
+                          child: SizedBox(
+                            height: 30,
+                            width: 30,
+                            child: CircularProgressIndicator(),
+                          ),
+                        );
+                      }),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20),
@@ -149,13 +180,13 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 
-  Widget buildContainer() {
+  Widget buildContainer(String image, String title, String author) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (_) {
-          return OverViewPage();
-        }));
-      },
+      // onTap: () {
+      //   Navigator.push(context, MaterialPageRoute(builder: (_) {
+      //     return OverViewPage();
+      //   }));
+      // },
       child: Container(
         width: 320,
         height: 50,
@@ -172,13 +203,14 @@ class _DashboardState extends State<Dashboard> {
                   width: 150,
                   height: 150,
                   child: ClipRRect(
-                      borderRadius: new BorderRadius.only(
-                          topLeft: Radius.circular(15),
-                          bottomLeft: Radius.circular(15)),
-                      child: Image.asset(
-                        "assets/images/kelingking.jpg",
-                        fit: BoxFit.fitHeight,
-                      )),
+                    borderRadius: new BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        bottomLeft: Radius.circular(15)),
+                    child: Image.asset(
+                      "assets/images/balongan.jpg",
+                      fit: BoxFit.fitHeight,
+                    ),
+                  ),
                 ),
                 SizedBox(
                   width: 10.0,
@@ -187,17 +219,24 @@ class _DashboardState extends State<Dashboard> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    BoldText("Pantai Kelingking", 11.5, kblack),
+                    SizedBox(
+                      width: 150,
+                      child: Text(
+                        title,
+                        style: TextStyle(
+                            fontSize: 11.5, fontWeight: FontWeight.bold),
+                      ),
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         // BoldText("5 Stars", 10.0, korangelite),
                         Icon(
-                          Icons.location_on,
+                          Icons.account_circle_sharp,
                           color: kgreyDark,
                           size: 15.0,
                         ),
-                        NormalText("Nusa Penida", kgreyDark, 10.0)
+                        NormalText(author, kgreyDark, 10.0)
                       ],
                     ),
                     Row(

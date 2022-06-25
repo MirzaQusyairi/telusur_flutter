@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lets_head_out/utils/Buttons.dart';
-import 'package:lets_head_out/utils/TextStyles.dart';
-import 'package:lets_head_out/utils/consts.dart';
-import 'package:lets_head_out/utils/navigation.dart';
+import 'package:telusur_flutter/utils/Buttons.dart';
+import 'package:telusur_flutter/utils/TextStyles.dart';
+import 'package:telusur_flutter/utils/consts.dart';
+import 'package:telusur_flutter/utils/navigation.dart';
 
 import '../SignInPage.dart';
+import '../DashBoard.dart';
 import 'Slider.dart';
 
 class SlideItem extends StatelessWidget {
@@ -15,10 +16,12 @@ class SlideItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    onPressed (){
+    onPressed() {
       Navigator.push(context, MaterialPageRoute(builder: (_) {
-        return SignInPage();
-      }));    }
+        return Dashboard();
+      }));
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -41,14 +44,16 @@ class SlideItem extends StatelessWidget {
           child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 40.0),
               child: index != 2
-                  ? NormalText(sliderArrayList[index].sliderSubHeading,kblack, 12.5)
+                  ? NormalText(
+                      sliderArrayList[index].sliderSubHeading, kblack, 12.5)
                   : Column(
                       children: <Widget>[
-                        NormalText(sliderArrayList[index].sliderSubHeading,kblack, 12.5),
+                        NormalText(sliderArrayList[index].sliderSubHeading,
+                            kblack, 12.5),
                         SizedBox(
                           height: 50,
                         ),
-                        WideButton("Lets go !!",onPressed),
+                        WideButton("Lets go !!", onPressed),
                       ],
                     )),
         ),

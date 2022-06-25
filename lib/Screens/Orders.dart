@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lets_head_out/utils/RecommendationImage.dart';
-import 'package:lets_head_out/utils/TextStyles.dart';
-import 'package:lets_head_out/utils/consts.dart';
+import 'package:telusur_flutter/utils/RecommendationImage.dart';
+import 'package:telusur_flutter/utils/TextStyles.dart';
+import 'package:telusur_flutter/utils/consts.dart';
 
 class Orders extends StatefulWidget {
   @override
@@ -9,13 +9,14 @@ class Orders extends StatefulWidget {
 }
 
 class _OrdersState extends State<Orders> with SingleTickerProviderStateMixin {
-  TabController tabController;
+  late TabController tabController;
 
   @override
   void initState() {
     super.initState();
     tabController = new TabController(length: 3, vsync: this);
   }
+
   @override
   void dispose() {
     super.dispose();
@@ -61,15 +62,17 @@ class _OrdersState extends State<Orders> with SingleTickerProviderStateMixin {
                         BoldText("More", 16, kdarkBlue),
                       ],
                     ),
-                    SizedBox(height: 16,),
+                    SizedBox(
+                      height: 16,
+                    ),
                     Container(
-                      width: MediaQuery.of(context).size.width-80,
+                      width: MediaQuery.of(context).size.width - 80,
                       height: 250,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Container(
-                            width:MediaQuery.of(context).size.width-80,
+                            width: MediaQuery.of(context).size.width - 80,
                             height: 200.0,
                             child: ClipRRect(
                                 borderRadius: new BorderRadius.all(
@@ -95,7 +98,9 @@ class _OrdersState extends State<Orders> with SingleTickerProviderStateMixin {
                         ],
                       ),
                     ),
-                    SizedBox(height: 10.0,),
+                    SizedBox(
+                      height: 10.0,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -103,20 +108,24 @@ class _OrdersState extends State<Orders> with SingleTickerProviderStateMixin {
                         BoldText("More", 16, kdarkBlue),
                       ],
                     ),
-                    SizedBox(height: 10.0,),
+                    SizedBox(
+                      height: 10.0,
+                    ),
                     Container(
                       width: 400,
                       height: 200,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: <Widget>[
-                          RecommendationImage("assets/sheraton.jpg", "Sheraton", "Oran"),
-                          RecommendationImage("assets/Meridien.jpg", "Meridien", "Oran"),
-                          RecommendationImage("assets/ibis.jpg", "Ibis", "Oran"),
+                          RecommendationImage(
+                              "assets/sheraton.jpg", "Sheraton", "Oran"),
+                          RecommendationImage(
+                              "assets/Meridien.jpg", "Meridien", "Oran"),
+                          RecommendationImage(
+                              "assets/ibis.jpg", "Ibis", "Oran"),
                         ],
                       ),
                     ),
-
                   ],
                 ),
               ),

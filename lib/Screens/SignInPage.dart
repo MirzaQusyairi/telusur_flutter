@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:lets_head_out/Screens/DashBoard.dart';
-import 'package:lets_head_out/Screens/RegistrationScreen.dart';
-import 'package:lets_head_out/utils/Buttons.dart';
-import 'package:lets_head_out/utils/TextStyles.dart';
-import 'package:lets_head_out/utils/consts.dart';
-import 'package:lets_head_out/utils/forms.dart';
+import 'package:telusur_flutter/Screens/DashBoard.dart';
+import 'package:telusur_flutter/Screens/RegistrationScreen.dart';
+import 'package:telusur_flutter/utils/Buttons.dart';
+import 'package:telusur_flutter/utils/TextStyles.dart';
+import 'package:telusur_flutter/utils/consts.dart';
+import 'package:telusur_flutter/utils/forms.dart';
 
 import 'Home.dart';
 
@@ -23,7 +23,6 @@ class _SignInPageState extends State<SignInPage> {
       appBar: AppBar(
         elevation: 0.0,
         centerTitle: true,
-        
         backgroundColor: kwhite,
         iconTheme: IconThemeData(
           color: Colors.black,

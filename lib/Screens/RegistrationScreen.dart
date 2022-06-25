@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:lets_head_out/Screens/SignInPage.dart';
-import 'package:lets_head_out/utils/Buttons.dart';
-import 'package:lets_head_out/utils/TextStyles.dart';
-import 'package:lets_head_out/utils/consts.dart';
-import 'package:lets_head_out/utils/forms.dart';
+import 'package:telusur_flutter/Screens/SignInPage.dart';
+import 'package:telusur_flutter/utils/Buttons.dart';
+import 'package:telusur_flutter/utils/TextStyles.dart';
+import 'package:telusur_flutter/utils/consts.dart';
+import 'package:telusur_flutter/utils/forms.dart';
 
 class RegistrationScreen extends StatefulWidget {
   @override
@@ -36,7 +36,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           ),
           SizedBox(height: 10),
           BoldText("Telusur App", 30.0, kdarkBlue),
-          
+
           SizedBox(
             height: 20,
           ),
@@ -59,7 +59,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             Navigator.of(context, rootNavigator: true)
                 .push(CupertinoPageRoute<bool>(
               fullscreenDialog: true,
-              builder: (context) => null,
+              builder: (context) => SizedBox(),
             ));
           }, true),
           SizedBox(
