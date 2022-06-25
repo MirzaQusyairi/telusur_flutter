@@ -206,6 +206,10 @@ class _DashboardState extends State<Dashboard> {
                     borderRadius: new BorderRadius.only(
                         topLeft: Radius.circular(15),
                         bottomLeft: Radius.circular(15)),
+                    // child: Image.network(
+                    //   "http://127.0.0.1:8000/storage/$image",
+                    //   fit: BoxFit.fitHeight,
+                    // ),
                     child: Image.asset(
                       "assets/images/balongan.jpg",
                       fit: BoxFit.fitHeight,

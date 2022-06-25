@@ -7,6 +7,7 @@ import 'package:telusur_flutter/utils/navigation.dart';
 
 import '../SignInPage.dart';
 import '../DashBoard.dart';
+import '../Home.dart';
 import 'Slider.dart';
 
 class SlideItem extends StatelessWidget {
@@ -18,7 +19,7 @@ class SlideItem extends StatelessWidget {
   Widget build(BuildContext context) {
     onPressed() {
       Navigator.push(context, MaterialPageRoute(builder: (_) {
-        return Dashboard();
+        return Home();
       }));
     }
 

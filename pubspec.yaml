@@ -30,6 +30,7 @@ dependencies:
   bottom_navy_bar: ^6.0.0
   http: ^0.13.4
   flutter_html: ^2.2.1
+  google_maps_flutter: ^2.1.7
 
 
 dev_dependencies:

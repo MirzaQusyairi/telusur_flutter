@@ -9,6 +9,8 @@
         android:name="${applicationName}"
         android:label="Telusur"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyD5NLP_5dyv6MuEbWDZjN76fYdaYI1R06Y"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
