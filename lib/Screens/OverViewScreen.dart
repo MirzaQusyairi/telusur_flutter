@@ -30,8 +30,8 @@ class _OverViewPageState extends State<OverViewPage>
     Post post = ModalRoute.of(context)!.settings.arguments as Post;
 
     Future<List<Comment>> fetchComment() async {
-      var response =
-          await http.get(Uri.parse('http://127.0.0.1:8000/api/comment/post/1'));
+      var response = await http
+          .get(Uri.parse('http://127.0.0.1:8000/api/comment/post/${post.id}'));
       return (json.decode(response.body)['data'] as List)
           .map((e) => Comment.fromJson(e))
           .toList();
@@ -64,7 +64,7 @@ class _OverViewPageState extends State<OverViewPage>
                     tabs: <Widget>[
                       Tab(text: "Selengkapnya"),
                       Tab(text: "Lokasi"),
-                      Tab(text: "Review"),
+                      Tab(text: "Komentar"),
                     ],
                   ),
                   backgroundColor: kwhite,
@@ -125,7 +125,7 @@ class _OverViewPageState extends State<OverViewPage>
                                             MainAxisAlignment.spaceBetween,
                                         children: <Widget>[
                                           BoldText("Tentang", 20.0, kblack),
-                                          BoldText("More", 16, kdarkBlue)
+                                          //BoldText("More", 16, kdarkBlue)
                                         ],
                                       ),
                                       SizedBox(
@@ -195,7 +195,7 @@ class _OverViewPageState extends State<OverViewPage>
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  BoldText("Location", 20.0, kblack),
+                                  BoldText("Lokasi", 20.0, kblack),
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(20.0),
                                     // child: Image.asset(
@@ -226,7 +226,7 @@ class _OverViewPageState extends State<OverViewPage>
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: <Widget>[
-                                        BoldText("Reviews", 20.0, kblack),
+                                        BoldText("Komentar", 20.0, kblack),
                                         //BoldText("Lihat Semua", 16, kdarkBlue),
                                       ],
                                     ),

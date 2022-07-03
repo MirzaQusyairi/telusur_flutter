@@ -19,7 +19,7 @@ class SlideItem extends StatelessWidget {
   Widget build(BuildContext context) {
     onPressed() {
       Navigator.push(context, MaterialPageRoute(builder: (_) {
-        return Home();
+        return SignInPage();
       }));
     }
 

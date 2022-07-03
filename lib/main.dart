@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'Screens/SplashScreen.dart';
 import 'Screens/OverViewScreen.dart';
+import 'Screens/SignInPage.dart';
 
 void main() => runApp(
       MaterialApp(
@@ -10,6 +11,7 @@ void main() => runApp(
         routes: {
           '/': (context) => SplashScreen(),
           '/detail_page': (context) => OverViewPage(),
+          '/login': (context) => SignInPage(),
         },
         // home: SplashScreen(),
       ),

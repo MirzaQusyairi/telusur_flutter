@@ -48,7 +48,7 @@ class _DashboardState extends State<Dashboard> {
                       child: BoldText("Blog", 20.0, kblack)),
                 ),
                 Container(
-                  width: 330,
+                  width: 450,
                   height: 150,
                   child: FutureBuilder(
                       future: fetchPost(),
@@ -188,7 +188,7 @@ class _DashboardState extends State<Dashboard> {
       //   }));
       // },
       child: Container(
-        width: 320,
+        width: 400,
         height: 50,
         child: Container(
             width: 300,
@@ -224,7 +224,7 @@ class _DashboardState extends State<Dashboard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     SizedBox(
-                      width: 150,
+                      width: 200,
                       child: Text(
                         title,
                         style: TextStyle(

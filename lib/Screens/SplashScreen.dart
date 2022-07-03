@@ -21,13 +21,16 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Icon(
-                FontAwesomeIcons.solidMap,
-                color: kwhite,
-                size: 70,
+              // Icon(
+              //   FontAwesomeIcons.solidMap,
+              //   color: kwhite,
+              //   size: 70,
+              // ),
+              Image(
+                image: AssetImage('logo(white).png'),
               ),
               SizedBox(height: 50),
-              BoldText("Telusur", 20.0, kdarkBlue),
+              //BoldText("Telusur", 20.0, kdarkBlue),
               TypewriterAnimatedTextKit(
                 text: ["Telusur App"],
                 textStyle: TextStyle(
